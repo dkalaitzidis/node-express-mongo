@@ -10,17 +10,16 @@ app.use(cors());
 app.use(bodyParser.json());
 
 //Import Routes
+const authRoute = require('./routes/auth');
 const postsRoute = require('./routes/posts');
 
+app.use("/user", authRoute);
 app.use('/posts', postsRoute);
 
 //ROUTES
 app.get('/', (req, res) => {
     res.send('Home')
 });
-
-
-
 
 //Connect to DB
 mongoose.connect(process.env.DB_CONNECTION,
