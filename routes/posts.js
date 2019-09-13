@@ -21,7 +21,7 @@ router.get('/:postId', async  (req, res) => {
         res.json(post);
     }
     catch(err) {
-        res.json({ message: err} );
+        res.json({ message: err });
     }
 });
 
